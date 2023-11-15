@@ -6,7 +6,7 @@ const MyScrollAnimations = () => {
   
   const {scrollYProgress} = useScroll({target:ref}) //target to choose what to track vs the whole page
   
-  const scaleX = useSpring(scrollYProgress)
+  const scaleX = useSpring(scrollYProgress, {stiffness:50}) //change to make spring smoother 
 
   const background = useTransform(
     scrollYProgress,
