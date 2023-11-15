@@ -6,6 +6,8 @@ import AnimationControls from "./originalCode/AnimationControls";
 import MyAnimationControls from "./myCode/MyAnimationControls";
 import ViewBasedAnimations from "./originalCode/ViewBasedAnimation";
 import MyViewBasedAnimations from "./myCode/MyViewBasedAnimation";
+import ScrollAnimations from "./originalCode/ScrollAnimations";
+import MyScrollAnimations from "./myCode/MyScrollAnimations";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <MyAnimationControls/>
       {/* <ViewBasedAnimations/> */}
       <MyViewBasedAnimations/>
+      {/* <ScrollAnimations/> */}
+      <MyScrollAnimations/>
       
     </div>
   );
