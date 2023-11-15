@@ -4,6 +4,8 @@ import MyBasicsOfMotion from "./myCode/MyBasicsOfMotions";
 import MyGestures from "./myCode/MyGestures";
 import AnimationControls from "./originalCode/AnimationControls";
 import MyAnimationControls from "./myCode/MyAnimationControls";
+import ViewBasedAnimations from "./originalCode/ViewBasedAnimation";
+import MyViewBasedAnimations from "./myCode/MyViewBasedAnimation";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <MyGestures />
       {/* <AnimationControls/> */}
       <MyAnimationControls/>
+      {/* <ViewBasedAnimations/> */}
+      <MyViewBasedAnimations/>
       
     </div>
   );
