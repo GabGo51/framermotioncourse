@@ -1,7 +1,9 @@
-import BasicsOfMotion from "./BasicsOfMotions";
-import Gestures from "./Gestures";
-import MyBasicsOfMotion from "./MyBasicsOfMotions";
-import MyGestures from "./MyGestures";
+import BasicsOfMotion from "./originalCode/BasicsOfMotions";
+import Gestures from "./originalCode/Gestures";
+import MyBasicsOfMotion from "./myCode/MyBasicsOfMotions";
+import MyGestures from "./myCode/MyGestures";
+import AnimationControls from "./originalCode/AnimationControls";
+import MyAnimationControls from "./myCode/MyAnimationControls";
 
 function App() {
   return (
@@ -10,6 +12,9 @@ function App() {
       <MyBasicsOfMotion />
       {/* <Gestures/> */}
       <MyGestures />
+      {/* <AnimationControls/> */}
+      <MyAnimationControls/>
+      
     </div>
   );
 }
