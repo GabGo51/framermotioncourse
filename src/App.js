@@ -8,10 +8,13 @@ import ViewBasedAnimations from "./originalCode/ViewBasedAnimation";
 import MyViewBasedAnimations from "./myCode/MyViewBasedAnimation";
 import ScrollAnimations from "./originalCode/ScrollAnimations";
 import MyScrollAnimations from "./myCode/MyScrollAnimations";
+import Modal from "./Fireship/ModalApp";
+import View from "./myCode/View";
 
 function App() {
   return (
     <div className="App">
+      <Modal/>
       {/* <BasicsOfMotion/> */}
       <MyBasicsOfMotion />
       {/* <Gestures/> */}
@@ -22,6 +25,7 @@ function App() {
       <MyViewBasedAnimations/>
       {/* <ScrollAnimations/> */}
       <MyScrollAnimations/>
+      <View/>
       
     </div>
   );
