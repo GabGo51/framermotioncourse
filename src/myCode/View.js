@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import img from "../img/eva2.PNG";
+import { useRef } from "react";
+
 const View = () => {
+
+  const ref = useRef(null)
+  const isInView = useInView(ref, {once:true})
+
 
   const initial = {
     opacity: 0,
@@ -30,60 +36,74 @@ const View = () => {
     x: 0,
   };
 
-  const AnimatedImage = () => (
-    <motion.img
-      initial={imageInitial}
-      whileInView={imageAnimation}
-      transition={{ duration: 2 }}
-      src={img}
-    />
-  );
+  
 
   return (
     <Container>
       <div className="section black">
         <div className="frame">
           <div>
-            <motion.h1
-              whileInView={h1animation}
-              initial={initial}
-              transition={{ duration: 1 }}
-            >
+            {/*viewport is the thing to make it go once*/}
+            <motion.h1 ref={ref} initial={initial} whileInView={h1animation} viewport={{once:true}}>
               TEST 1
             </motion.h1>
-            <motion.p
-              initial={initial}
-              whileInView={panimation}
-              transition={{ duration: 1 }}
-            >
+            <motion.p initial={initial} whileInView={panimation}>
               this is sum random text hihi
             </motion.p>
           </div>
-          <AnimatedImage/>
+          <motion.img
+      initial={imageInitial}
+      whileInView={imageAnimation}
+      src={img}
+    />
         </div>
       </div>
 
       <div className="section white">
         <header>
           <div>
-            <img src={img}/>
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{delay: 0.8 }}
+              viewport={{once:true}}
+              src={img}
+            />
             <ul>
-              <motion.li initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1, delay:.6}}>HELLO</motion.li>
-              <motion.li initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1, delay:.8}}>HELLO</motion.li>
-              <motion.li initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1, delay:1}}>HELLO</motion.li>
+              <motion.li
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{delay: 0.6 }}
+                viewport={{once:true}}
+              >
+                HELLO
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                viewport={{once:true}}
+              >
+                HELLO
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                viewport={{once:true}}
+              >
+                HELLO
+              </motion.li>
             </ul>
           </div>
-          <motion.div className="bottom-bar" initial={{scaleX:0}} whileInView={{scaleX:1}} transition={{duration:1}}></motion.div>
+          <motion.div
+            className="bottom-bar"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{once:true}}
+            
+          ></motion.div>
         </header>
-      </div>
-      <div className="section black">
-        <div className="frame"></div>
-      </div>
-      <div className="section white">
-        <div className="frame"></div>
-      </div>
-      <div className="section black">
-        <div className="frame"></div>
       </div>
     </Container>
   );
@@ -97,33 +117,32 @@ const Container = styled.div`
 
   header {
     width: 90vw;
-    div{
+    div {
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
     }
 
-    img{
+    img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
     }
-    ul{
+    ul {
       display: flex;
       list-style-type: none;
 
-      li{
+      li {
         cursor: pointer;
         margin-left: 40px;
         transition: 400ms;
-        &:hover{
+        &:hover {
           scale: 1.1;
         }
       }
     }
 
-
-    .bottom-bar{
+    .bottom-bar {
       height: 1px;
       background-color: black;
       width: 100%;
@@ -147,6 +166,11 @@ const Container = styled.div`
     width: 50vw;
     display: flex;
     justify-content: space-between;
+
+    h1 {
+      opacity: 0;
+      transform: translateX(50px);
+    }
   }
 `;
 
