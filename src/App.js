@@ -11,6 +11,7 @@ import MyScrollAnimations from "./myCode/MyScrollAnimations";
 import Modal from "./Fireship/ModalApp";
 import View from "./myCode/View";
 import { motion, MotionConfig } from "framer-motion";
+import Scroll from "./myCode/Scroll";
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,8 @@ function App() {
       <MotionConfig transition={{duration:1}}>
       <View/> 
       </MotionConfig>
+      <Scroll/>
+      
       
       
     </div>
